@@ -9,7 +9,7 @@
 //function pointer alias for equation
 using Equation = double (*) (double);
 
-//function pointer alias for computing derivative
+//function pointer alias for computing first derivative
 using Derivative = double (*) (double);
 
 //function to find root for equation by using Newton's method
@@ -32,9 +32,12 @@ double der3 (double x);
 int main()
 {
 
-    std::cout << "An approximate root for   5x^3 + x^2 - 120 = 0                  is " << getRoot(100, 10, func1, der1) << std::endl;
-    std::cout << "An approximate root for   x^4 - 5x^3 + 10x^2 - 74 = 0           is " << getRoot(100, 10, func2, der2) << std::endl;
-    std::cout << "An approximate root for   4x^5 - 5x^4 + 7x^3 + 4x^2 - 100 = 0   is " << getRoot(100, 10, func3, der3) << std::endl;    
+    std::cout << "An approximate root for       5x^3 + x^2 - 120 = 0                  is " << getRoot(100, 10, func1, der1) << std::endl;
+    std::cout << "An approximate root for       x^4 - 5x^3 + 10x^2 - 74 = 0           is " << getRoot(100, 10, func2, der2) << std::endl;
+    std::cout << "Another approximate root for  x^4 - 5x^3 + 10x^2 - 74 = 0           is " << getRoot(100, -10, func2, der2) << std::endl;    
+    std::cout << "An approximate root for       4x^5 - 5x^4 + 7x^3 + 4x^2 - 100 = 0   is " << getRoot(100, 10, func3, der3) << std::endl; 
+
+    std::cout << "\nPlease note that an equation may have more than one root" << std::endl;   
 
     return 0;
 }
